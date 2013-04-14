@@ -11,7 +11,10 @@ if(!isset($arParams["CACHE_TIME"]))
 	$arParams["CACHE_TIME"] = 36000000;
 
 $arParams["IBLOCK_TYPE"] = trim($arParams["IBLOCK_TYPE"]);
-$arParams["IBLOCK_ID"] = intval($arParams["IBLOCK_ID"]);
+/** experemental, need test **/
+if( $arParams["MODE"] != 'MULTI' )
+    $arParams["IBLOCK_ID"] = intval($arParams["IBLOCK_ID"]);
+    
 
 $arParams["SECTION_ID"] = intval($arParams["~SECTION_ID"]);
 if($arParams["SECTION_ID"] > 0 && $arParams["SECTION_ID"]."" != $arParams["~SECTION_ID"])
